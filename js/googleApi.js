@@ -47,7 +47,8 @@ function format(raw) {
       address.subAdminArea = component.long_name;
     }
     else if (component.types.indexOf('sublocality') !== -1 || component.types.indexOf('sublocality_level_1') !== -1) {
-      address.subLocality = component.long_name;
+      address.subLocality = address.subLocality ? address.subLocality + ', ' + component.long_name : component.long_name;
+      //address.subLocality = component.long_name;
     }
     else if (component.types.indexOf('point_of_interest') !== -1 || component.types.indexOf('colloquial_area') !== -1) {
       address.feature = component.long_name;
