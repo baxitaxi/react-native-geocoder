@@ -35,7 +35,7 @@ export default {
   },
 
   geocodeWithGoogle(position) {
-    if (!this.apiKey) { throw err; }
+    if (!this.apiKey) { throw new Error("Google API key not set."); }
     return GoogleApi.geocodePosition(this.apiKey, position);
   },
 
